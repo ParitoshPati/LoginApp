@@ -44,10 +44,15 @@ class LoginPageState extends State<LoginPage>
         fit: StackFit.expand,
         children: [
           Image(
-            image: AssetImage("assets/mountain.jpg"),
-            fit: BoxFit.cover,
-            color: Colors.black54,
-            colorBlendMode: BlendMode.darken,
+              image: AssetImage("assets/mountain.jpg"),
+              fit: BoxFit.cover,
+              color: Colors.black54,
+              colorBlendMode: BlendMode.darken),
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: Container(
+              color: Colors.black.withOpacity(0),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
